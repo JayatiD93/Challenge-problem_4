@@ -247,16 +247,16 @@ AU = U\myvec{\lambda & y\\0 & B}
 \end{align}
 where $B \in C^{(n-1)\times(n-1)}$, we decompose the matrix $A$ into blocks and compute the products of $A A^*$ and $A^* A$ as follows:
 \begin{align}
-A A^* =  U \myvec{\lambda & y\\0 & B}\myvec{\bar{\lambda} & 0\\y^* & \bar{B}}U^*\\
-\implies A A^* =  U \myvec{\bar{\lambda}\lambda + yy^* & y\bar{B}\\By^* & B\bar{B}} U^*\\
-\implies A A^* = U \myvec{\norm{\lambda}^2 + \norm{y}^2 & y \bar{B}\\By^* & B\bar{B}} U^*
+A A^* =  U \myvec{\lambda & y\\0 & B}\myvec{\bar{\lambda} & 0\\y^* & B^*}U^*\\
+\implies A A^* =  U \myvec{\bar{\lambda}\lambda + yy^* & yB^*\\By^* & BB^*} U^*\\
+\implies A A^* = U \myvec{\norm{\lambda}^2 + \norm{y}^2 & y B^*\\By^* & BB^*} U^*
 \end{align}
-Where $\bar{y^*}$ is the conjugate transpose of $y^*$.
+Where $y^*$ is the conjugate transpose of $y$.
 Now,
 \begin{align}
-A^* A = U \myvec{\bar{\lambda} & 0\\y^* & \bar{B}}\myvec{\lambda & y\\0 & B}U^*\\
-\implies A^* A =  U \myvec{\bar{\lambda}\lambda & y \bar{\lambda}\\\lambda y^* & \bar{B}B + y^*y} U^*\\
-\implies A^* A =U \myvec{\norm{\lambda}^2 & y \bar{\lambda}\\\lambda y^* & \bar{B}B + \norm{y}^2} U^*
+A^* A = U \myvec{\bar{\lambda} & 0\\y^* & B^*}\myvec{\lambda & y\\0 & B}U^*\\
+\implies A^* A =  U \myvec{\bar{\lambda}\lambda & y \bar{\lambda}\\\lambda y^* & B^*B + y^*y} U^*\\
+\implies A^* A =U \myvec{\norm{\lambda}^2 & y \bar{\lambda}\\\lambda y^* & B^*B + \norm{y}^2} U^*
 \end{align}
 As $A A^* = A^* A$, 
 \begin{align}
@@ -266,7 +266,7 @@ y y^* = 0\\
 \implies A = U \myvec{\lambda & 0\\0 & B} U^*\\
 \implies A = U D U^*
 \end{align}
-As $\bar{B} = B^*$ and $B^* B = B B^*$, so $B$ is also normal and $B \in C^{(n-1)\times(n-1)}$. So it must be diagonal by mathematical induction hypothesis.
+As $B^* B = B B^*$, so $B$ is also normal and $B \in C^{(n-1)\times(n-1)}$. So it must be diagonal by mathematical induction hypothesis.
 Let, 
 \begin{align}
 B = M D_1 M^*
@@ -282,6 +282,7 @@ A = W\myvec{\lambda & 0\\0 & D_1}W^*
 \end{align}
 where $W$ is also a unitary matrix and $W=U\myvec{1 & 0\\0 & M}$
 This implies that if $A$ is normal then $A$ is unitary diagonalizable.
+
 %\renewcommand{\theequation}{\theenumi}
 %\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
